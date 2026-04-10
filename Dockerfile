@@ -65,7 +65,7 @@ WORKDIR /home/koharu
 
 COPY --from=builder --chown=koharu:koharu /app/target/release/koharu ./koharu
 
-RUN mkdir -p /home/koharu/.local/share/koharu
+RUN mkdir -p /home/koharu/.local/share/Koharu
 
 EXPOSE 4000
 
@@ -104,7 +104,7 @@ USER koharu
 WORKDIR /home/koharu
 
 COPY --from=builder --chown=koharu:koharu /app/target/release/koharu ./koharu
-RUN mkdir -p /home/koharu/.local/share/koharu
+RUN mkdir -p /home/koharu/.local/share/Koharu
 
 EXPOSE 4000
 

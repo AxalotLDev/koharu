@@ -10,11 +10,11 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      - koharu_data:/home/koharu/.local/share/koharu
-      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - data:/home/koharu/.local/share/Koharu
     environment:
       KOHARU_PORT: "4000"
       KOHARU_ARGS: ""
+      XDG_RUNTIME_DIR: /tmp/runtime-koharu
     profiles:
       - cpu
 
@@ -29,11 +29,11 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      - koharu_data:/home/koharu/.local/share/koharu
-      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - data:/home/koharu/.local/share/Koharu
     environment:
       KOHARU_PORT: "4000"
       KOHARU_ARGS: ""
+      XDG_RUNTIME_DIR: /tmp/runtime-koharu
       NVIDIA_VISIBLE_DEVICES: all
       NVIDIA_DRIVER_CAPABILITIES: compute,utility,graphics
     devices:
@@ -51,4 +51,4 @@ services:
       - gpu
 
 volumes:
-  koharu_data:
+  data:
